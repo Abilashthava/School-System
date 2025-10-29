@@ -11,7 +11,7 @@
 		<br>
 		 
 		<label for="password">Password</label>
-		<input type="text" name="password"/>
+		<input type="text" name="password" required />
 		<br>
 		<input type="reset" name="reset" id="reset" value="Reset">
 		
