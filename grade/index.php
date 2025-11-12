@@ -1,6 +1,6 @@
 <?php
 require_once('../config.php');
-$query = "SELECT * FROM grade;";
+$query = "SELECT * FROM grades;";
 $results = mysqli_query($conn,$query);
 if(!$results){
 	echo mysqli_error($conn);
@@ -27,6 +27,8 @@ if(!$results){
 				<td>Updated-by</td>
 				<td>Deleted-at</td>
 				<td>Deleted-by</td>
+				<td colspan="4" style="text-align :center";>Actions</td>
+				
 			</tr>
 		<?php foreach($results as $grade){
 				//while($row = mysqli_fetch_assoc($results) ?>
@@ -44,10 +46,12 @@ if(!$results){
 				<td><?php echo $grade['deleted_by']; ?></td>
 				<td><button class="button"><a href="../grade/edit.php?id=<?php echo $grade['id'];?>" >Edit </a></button></td>
 				<td><button class="button"><a href="../grade/delete.php?id=<?php echo $grade['id'] ?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+				<td><button class="button"><a href="add_grade_sub_form.php?id=<?php echo $grade['id'] ?>" onclick ="return confirm('Are you sure !')">Add Subject </a></button>
+				<td><button class="button"><a href="../grade/show.php?id=<?php echo $grade['id'] ?>" onclick ="return confirm('Are you sure !')">Show </a></button>
 					</td>
 			</tr>
 		<?php } ?>
 	</table></br>
-	<button><a href="create_form.php">Add Grade</a></button>
+	<a href="create_form.php"><button style="cursor:pointer;">Add Grade</button></a>
 </body>
 </html>

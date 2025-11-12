@@ -9,10 +9,7 @@
 	<tr>
 		<th colspan = "2"> Grade Registation </th>
 	</tr>
-	<tr>
-		<td><label for="id">Id</label></td>
-		<td><input type="text" name="id" id="id"  required></td>
-	</tr>
+	
 	<tr>
 		<td><label for="grade_name">Grade Name</label></td>
 		<td><input type="text" name="grade_name" id="grade_name"  required></td>

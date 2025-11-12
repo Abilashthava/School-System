@@ -4,7 +4,7 @@
 		$password=$_POST['password'];
 		
 		require_once('../config.php');
-		$query="SELECT * FROM  users WHERE username='$username' AND password='$password';";
+		$query="SELECT * FROM  user WHERE username='$username' AND password='$password';";
 		$result=mysqli_query($conn,$query);
 		$row=mysqli_num_rows($result);
 		

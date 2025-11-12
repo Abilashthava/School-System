@@ -9,7 +9,7 @@ if($_SERVER ["REQUEST_METHOD"] == "POST" ){
 	
 	
 	require_once('../config.php');
-	$query = "UPDATE subject SET subject_name = '$subject_name' ,subject_index = '$subject_index',subject_order = '$subject_order',subject_color = '$subject_color',subject_number = '$subject_number' WHERE id ='$id'; ";
+	$query = "UPDATE subjects SET subject_name = '$subject_name' ,subject_index = '$subject_index',subject_order = '$subject_order',subject_color = '$subject_color',subject_number = '$subject_number' WHERE id ='$id'; ";
 	$results = mysqli_query($conn,$query);
 	
 	

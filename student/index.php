@@ -1,6 +1,6 @@
 <?php
 require_once('../config.php');
-$query = "SELECT * FROM student;";
+$query = "SELECT * FROM students;";
 $results = mysqli_query($conn,$query);
 if(!$results){
 	echo mysqli_error($conn);
@@ -17,6 +17,7 @@ if(!$results){
 	<table border="2" cellpadding = "10" cellspacing = "0">
 			<tr>
 				<td>Id</td>
+				<td>image</td>
 				<td>Father Name</td>
 				<td>Student Name</td>
 				<td>Addmission Number</td>
@@ -31,11 +32,13 @@ if(!$results){
 				<td>Updated-by</td>
 				<td>Deleted-at</td>
 				<td>Deleted-by</td>
+				<td colspan="5" style="text-align:center;">Action</td>
 			</tr>
 		<?php foreach($results as $students){
 				//while($row = mysqli_fetch_assoc($results) ?>
 			<tr>
 				<td><?php echo $students['id']; ?></td>
+				<td><img src="<?php echo $students['image'];?>" alt="<?php echo $students['file_name']; ?>" width="50px" height="50px" ></td>
 				<td><?php echo $students['father_name']; ?></td>
 				<td><?php echo $students['student_name']; ?></td>
 				<td><?php echo $students['addmission_number']; ?></td>
@@ -52,10 +55,14 @@ if(!$results){
 				<td><?php echo $students['deleted_at']; ?></td>
 				<td><?php echo $students['deleted_by']; ?></td>
 				<td><button class="button"><a href="../student/edit.php?id=<?php echo $students['id'];?>" >Edit </a></button></td>
+				<td><button class="button"><a href="../student/show.php?id=<?php echo $students['id'];?>" >Show </a></button></td>
 				<td><button class="button"><a href="../student/delete.php?id=<?php echo $students['id'] ?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
+				<td><button class="button"><a href="../student/addsub_form.php?id=<?php echo $students['id'] ?>" onclick ="return confirm('Are you sure !')">Add Subject </a></button>
 					</td>
+				
 			</tr>
 		<?php } ?>
+		
 	</table></br>
 	<button><a href="create_form.php">Add Student</a></button>
 </body>

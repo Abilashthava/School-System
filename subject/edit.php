@@ -8,7 +8,7 @@
 	$id = $_GET['id'];
 	require_once('../config.php');
 	
-	$query = "SELECT * FROM subject WHERE id = '$id' ;";
+	$query = "SELECT * FROM subjects WHERE id = '$id' ;";
 	$result = mysqli_query($conn,$query);
 	$row = mysqli_fetch_array($result);
 ?>

@@ -4,15 +4,16 @@
 <title>Student creation</title>
 </head>
 <body>
-<form action="store.php" method = "POST" autocomplete = "on">
+<form action="store.php" method = "POST" enctype="multipart/form-data">
 <table border="2" cellpadding = "10" cellspacing = "10">
 	<tr>
 		<th colspan = "2"> Student Registation </th>
 	</tr>
 	<tr>
-		<td><label for="id">Id</label></td>
-		<td><input type="text" name="id" id="id"  required></td>
-	</tr>
+                <td><label for="myfile">Select student picture</label></td>
+                <td><input type="file" name="myfile" id="myfile" accept="image/jpg"></td>
+            </tr>
+	
 	<tr>
 		<td><label for="father_name">Father Name</label></td>
 		<td><input type="text" name="father_name" id="father_name"  required></td>

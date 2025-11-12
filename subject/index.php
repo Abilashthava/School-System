@@ -1,6 +1,6 @@
 <?php
 require_once('../config.php');
-$query = "SELECT * FROM subject;";
+$query = "SELECT * FROM subjects;";
 $results = mysqli_query($conn,$query);
 if(!$results){
 	echo mysqli_error($conn);
@@ -28,6 +28,7 @@ if(!$results){
 				<td>Updated-by</td>
 				<td>Deleted-at</td>
 				<td>Deleted-by</td>
+					<td colspan="4" style="text-align :center";>Actions</td>
 			</tr>
 		<?php foreach($results as $subject){
 				//while($row = mysqli_fetch_assoc($results) ?>
@@ -45,6 +46,7 @@ if(!$results){
 				<td><?php echo $subject['deleted_at']; ?></td>
 				<td><?php echo $subject['deleted_by']; ?></td>
 				<td><button class="button"><a href="../subject/edit.php?id=<?php echo $subject['id'];?>" >Edit </a></button></td>
+				<td><button class="button"><a href="../subject/show.php?id=<?php echo $subject['id'];?>" >Show </a></button></td>
 				<td><button class="button"><a href="../subject/delete.php?id=<?php echo $subject['id'] ?>" onclick ="return confirm('Are you sure !')">Delete </a></button>
 					</td>
 			</tr>
